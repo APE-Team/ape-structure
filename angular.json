@@ -125,6 +125,129 @@
           }
         }
       }
+    },
+    "ape-mobile": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ape-mobile",
+      "sourceRoot": "projects/ape-mobile/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ape-mobile",
+            "index": "projects/ape-mobile/src/index.html",
+            "main": "projects/ape-mobile/src/main.ts",
+            "polyfills": "projects/ape-mobile/src/polyfills.ts",
+            "tsConfig": "projects/ape-mobile/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ape-mobile/src/favicon.ico",
+              "projects/ape-mobile/src/assets"
+            ],
+            "styles": [
+              "projects/ape-mobile/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ape-mobile/src/environments/environment.ts",
+                  "with": "projects/ape-mobile/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ape-mobile:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ape-mobile:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ape-mobile:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ape-mobile/src/test.ts",
+            "polyfills": "projects/ape-mobile/src/polyfills.ts",
+            "tsConfig": "projects/ape-mobile/tsconfig.spec.json",
+            "karmaConfig": "projects/ape-mobile/karma.conf.js",
+            "assets": [
+              "projects/ape-mobile/src/favicon.ico",
+              "projects/ape-mobile/src/assets"
+            ],
+            "styles": [
+              "projects/ape-mobile/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ape-mobile/tsconfig.app.json",
+              "projects/ape-mobile/tsconfig.spec.json",
+              "projects/ape-mobile/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ape-mobile/e2e/protractor.conf.js",
+            "devServerTarget": "ape-mobile:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ape-mobile:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "ape-web"
