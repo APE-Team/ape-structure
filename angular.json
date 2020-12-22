@@ -248,6 +248,46 @@
           }
         }
       }
+    },
+    "ape-api": {
+      "projectType": "library",
+      "root": "projects/ape-api",
+      "sourceRoot": "projects/ape-api/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ape-api/tsconfig.lib.json",
+            "project": "projects/ape-api/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ape-api/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ape-api/src/test.ts",
+            "tsConfig": "projects/ape-api/tsconfig.spec.json",
+            "karmaConfig": "projects/ape-api/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ape-api/tsconfig.lib.json",
+              "projects/ape-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ape-web"
