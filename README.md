@@ -29,3 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Generate workspace
 
 - ng new "workspace_name" --create-application false
+
+### Generate application
+
+- ng g application ape-web --strict true --routing true
