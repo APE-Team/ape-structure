@@ -30,6 +30,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - ng new "workspace_name" --create-application false
 
-### Generate application
+### Generate applications
 
 - ng g application ape-web --strict true --routing true
+- ng g application ape-mobile --strict true --routing true
+
+### Generate ape-api library
+
+- ng g library ape-api
+
+### Add NGRX
+
+- ng add @ngrx/store@latest
+- ng add @ngrx/store-devtools@latest
+- ng add @ngrx/effects@latest
