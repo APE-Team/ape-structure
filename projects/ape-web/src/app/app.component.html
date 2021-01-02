@@ -20,7 +20,7 @@
           <li nz-menu-item nzMatchRouter>
             <a>Monitor</a>
           </li>
-  
+
           <li nz-menu-item nzMatchRouter>
             <a>Workplace</a>
           </li>
@@ -40,9 +40,33 @@
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
-        </span>
+        <div nz-row>
+          <div nz-col [nzSpan]="1">
+            <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+            </span>
+          </div>
+    
+          <div nz-col [nzSpan]="20">
+            <ul nz-menu nzMode="horizontal">
+              <li nz-menu-item nzSelected>
+                <a>PATIENT LIST</a>
+              </li>
+            </ul>
+          </div>
+
+          <div nz-col [nzSpan]="1">
+            <i nz-icon [nzType]="'search'" style="font-size: 24px; vertical-align: middle; transform: scaleX(-1);"></i>
+          </div>
+
+          <div nz-col [nzSpan]="1">
+            <nz-avatar nzText="JM"></nz-avatar>
+          </div>
+
+          <div nz-col [nzSpan]="1">
+            <span>LOGOUT</span>
+          </div>
+        </div>
       </div>
     </nz-header>
 
