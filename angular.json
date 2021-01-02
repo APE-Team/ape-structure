@@ -28,10 +28,16 @@
             "aot": true,
             "assets": [
               "projects/ape-web/src/favicon.ico",
-              "projects/ape-web/src/assets"
+              "projects/ape-web/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "projects/ape-web/src/styles.scss"
+              "projects/ape-web/src/styles.scss",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "scripts": []
           },
