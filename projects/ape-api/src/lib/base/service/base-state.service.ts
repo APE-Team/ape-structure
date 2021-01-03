@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-export abstract class ApeStateService {
+export abstract class BaseStateService {
     constructor() {}
 
     public abstract isLoading$(): Observable<boolean>;
