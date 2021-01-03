@@ -1,0 +1,30 @@
+<div class="patient-list">
+    <nz-table #nzTable
+    [nzData]="patients"
+  >
+    <thead>
+      <tr>
+        <th>PATIENT / MRN</th>
+
+        <th>UNIT / ROOM / BED</th>
+
+        <th>BIRTHDATE GENDER-WEIGHT</th>
+
+        <th>ADMIT DATE</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let data of nzTable.data">
+        <td>{{ data.lastName }}, {{ data.firstName }}</td>
+
+        <td>{{ data.unit }} {{ data.room }}-{{ data.bed }}</td>
+
+        <td>{{ data.birthdate }} {{ data.gender }} - {{ data.weight }}</td>
+
+        <td>{{ data.admitDate }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+

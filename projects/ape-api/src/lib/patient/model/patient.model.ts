@@ -3,7 +3,7 @@ import { EntityModel } from '../../entity';
 export interface PatientModel extends EntityModel {
     admitDate: number;
     bed: string;
-    birthDate: number;
+    birthdate: number;
     firstName: string;
     gender: string;
     lastName: string;
