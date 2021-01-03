@@ -7,6 +7,6 @@ import { BaseStateService } from '../../base';
 
 @Injectable()
 export abstract class PatientStateService extends BaseStateService {
-    public abstract dispatchListPatients(): void;
-    public abstract selectPatients$(): Observable<PatientModel[]>;
+    public abstract dispatchListPatientsByUserIdAction(userId: string): void;
+    public abstract selectPatientsByUserId$(userId: string): Observable<PatientModel[]>;
 }

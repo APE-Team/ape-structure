@@ -33,8 +33,12 @@ export class PatientDataServiceImpl extends PatientDataService {
     }
 
     public list$(): Observable<EntityModel[]> {
-        return of(this.patients);
+        return of([]);
     }
+
+    public listPatientsByUserId$(): Observable<PatientModel[]> {
+      return of(this.patients);
+  }
 
     public load$(uid: string): Observable<EntityModel> {
         return this.patientMap.get(uid);
