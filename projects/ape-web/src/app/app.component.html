@@ -51,13 +51,21 @@
             <i nz-icon [nzType]="'search'" style="font-size: 24px; vertical-align: middle; transform: scaleX(-1);"></i>
           </div>
 
-          <div nz-col [nzSpan]="1">
-            <nz-avatar nzText="JM"></nz-avatar>
-          </div>
+          <ng-container *ngIf="isAuthenticated$ | async; else login">
+            <div nz-col [nzSpan]="1">
+              <nz-avatar nzText="JM"></nz-avatar>
+            </div>
 
-          <div nz-col [nzSpan]="1">
-            <span>LOGOUT</span>
-          </div>
+            <div nz-col [nzSpan]="1">
+              <a (click)="logoutClickHandler()"><span>LOGOUT</span></a>
+            </div>
+          </ng-container>
+
+          <ng-template #login>
+            <div nz-col [nzSpan]="1">
+              <a (click)="loginClickHandler()"><span>LOGIN</span></a>
+            </div>
+          </ng-template>
         </div>
       </div>
     </nz-header>

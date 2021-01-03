@@ -30,7 +30,7 @@ export class AuthenticationStateServiceImpl extends AuthenticationStateService {
         return this.store.pipe(select(authenticationSelectors.selectAuthenticatedUser));
     }
 
-    public selectIsAuthenticated$(): Observable<boolean> {
+    public isAuthenticated$(): Observable<boolean> {
         return this.store.pipe(select(authenticationSelectors.selectIsAuthenticated));
     }
 

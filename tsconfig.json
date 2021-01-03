@@ -25,7 +25,7 @@
         "projects/ape-api/src/public-api.ts"
       ],
       "@ape-authentication": [
-        "projects/ape-authentication"
+        "projects/ape-authentication/src/public-api.ts"
       ]
     }
   },

@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IconsProviderModule } from './icons-provider.module';
+import { AuthenticationStoreModule } from '@ape-authentication';
 
 registerLocaleData(en);
 
@@ -38,6 +39,7 @@ registerLocaleData(en);
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        AuthenticationStoreModule,
         IconsProviderModule,
         NzAvatarModule,
         NzDividerModule,
