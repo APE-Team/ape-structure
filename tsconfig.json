@@ -26,6 +26,9 @@
       ],
       "@ape-authentication": [
         "projects/ape-authentication/src/public-api.ts"
+      ],
+      "@ape-patient": [
+        "projects/ape-patient/src/public-api.ts"
       ]
     }
   },
