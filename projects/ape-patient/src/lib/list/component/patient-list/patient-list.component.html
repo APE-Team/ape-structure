@@ -11,6 +11,8 @@
         <th>BIRTHDATE GENDER-WEIGHT</th>
 
         <th>ADMIT DATE</th>
+
+        <th>WORKING DIAGNOSES</th>
       </tr>
     </thead>
 
@@ -20,9 +22,11 @@
 
         <td>{{ data.unit }} {{ data.room }}-{{ data.bed }}</td>
 
-        <td>{{ data.birthdate }} {{ data.gender }} - {{ data.weight }}</td>
+        <td>{{ data.birthdate | date:'shortDate' }} {{ data.gender }} - {{ data.weight }} kg</td>
 
-        <td>{{ data.admitDate }}</td>
+        <td>{{ data.admitDate | date:'short' }}</td>
+
+        <td>{{ data.workingDiagnoses.join(', ') }}</td>
       </tr>
     </tbody>
   </nz-table>

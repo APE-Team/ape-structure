@@ -10,6 +10,7 @@ export interface PatientModel extends EntityModel {
     mrn: number;
     room: string;
     unit: string;
+    userIds: string[];
     weight: number;
     workingDiagnoses: string[];
 }

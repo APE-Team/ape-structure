@@ -19,5 +19,5 @@ export const selectAllPatients = createSelector(getPatientState, selectAll);
 
 export const selectPatientsByUserId = () =>
     createSelector(selectAllPatients, (patients: PatientModel[], props: any) =>
-        patients.filter((patient) => patient.uid === props.userId)
+        patients.filter((patient) => patient.userIds.includes(props.userId))
     );
