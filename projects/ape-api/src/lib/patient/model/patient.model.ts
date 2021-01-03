@@ -8,7 +8,7 @@ export interface PatientModel extends EntityModel {
     gender: string;
     lastName: string;
     mrn: number;
-    room: number;
+    room: string;
     unit: string;
     weight: number;
     workingDiagnoses: string[];
