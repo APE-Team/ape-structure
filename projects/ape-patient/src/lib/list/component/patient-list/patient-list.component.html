@@ -18,15 +18,15 @@
 
     <tbody>
       <tr *ngFor="let data of nzTable.data">
-        <td>{{ data.lastName }}, {{ data.firstName }}</td>
+        <td>{{ data.name.lastName }}, {{ data.name.firstName }}</td>
 
         <td>{{ data.unit }} {{ data.room }}-{{ data.bed }}</td>
 
-        <td>{{ data.birthdate | date:'shortDate' }} {{ data.gender }} - {{ data.weight }} kg</td>
+        <td>{{ data.age }} {{ data.weight }} kg</td>
 
         <td>{{ data.admitDate | date:'short' }}</td>
 
-        <td>{{ data.workingDiagnoses.join(', ') }}</td>
+        <td>{{ data.workingDiagnose }}</td>
       </tr>
     </tbody>
   </nz-table>
