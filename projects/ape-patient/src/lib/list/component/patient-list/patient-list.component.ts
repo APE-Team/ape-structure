@@ -8,7 +8,7 @@ import { PatientModel } from '@ape-api';
 })
 export class PatientListComponent implements OnInit {
     @Input()
-    public patients: PatientModel[] = [];
+    public patients: PatientModel[] | null = [];
 
     public constructor() {}
 
