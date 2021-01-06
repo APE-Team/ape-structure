@@ -11,7 +11,7 @@ export const listPatientsByUserIdSuccess = createAction(
     props<{ patients: PatientModel[] }>()
 );
 
-export const loadPatient = createAction('[Patient] Load Patient', props<{ uid: string }>());
+export const loadPatient = createAction('[Patient] Load Patient', props<{ id: string }>());
 
 export const loadPatientSuccess = createAction(
     '[Patient] Load Patient Success',

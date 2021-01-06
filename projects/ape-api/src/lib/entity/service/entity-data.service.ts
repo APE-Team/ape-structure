@@ -14,5 +14,5 @@ export abstract class EntityDataService extends BaseDataService {
     }
 
     public abstract list$(): Observable<EntityModel[]>;
-    public abstract load$(uid: string): Observable<EntityModel>;
+    public abstract load$(id: string): Observable<EntityModel>;
 }

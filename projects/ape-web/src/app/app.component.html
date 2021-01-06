@@ -39,16 +39,12 @@
             </span>
           </div>
 
-          <div nz-col [nzSpan]="18">
+          <div nz-col [nzSpan]="21">
             <ul nz-menu nzMode="horizontal">
               <li nz-menu-item nzSelected>
                 <a>PATIENT LIST</a>
               </li>
             </ul>
-          </div>
-
-          <div nz-col [nzSpan]="3">
-            <lib-ape-search></lib-ape-search>
           </div>
 
           <ng-container *ngIf="isAuthenticated$ | async; else login">

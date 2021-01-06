@@ -31,15 +31,17 @@ import { SearchModel } from '@ape-api';
     styles: [],
 })
 export class ApeSearchComponent implements AfterViewInit {
+    @Input()
+    isTrim: boolean = true;
     @Output()
-    public change: EventEmitter<SearchModel>;
+    public searchChange: EventEmitter<SearchModel>;
     @ViewChild('searchInput', { static: true })
     searchInput: ElementRef;
     @Input()
     public searchValue: SearchModel = { query: '' };
 
     public constructor() {
-        this.change = new EventEmitter();
+        this.searchChange = new EventEmitter();
     }
 
     public ngAfterViewInit() {
@@ -50,9 +52,11 @@ export class ApeSearchComponent implements AfterViewInit {
         fromEvent(this.searchInput?.nativeElement, 'input')
             .pipe(debounceTime(300))
             .subscribe((event) => {
-                const value = this.searchInput.nativeElement.value;
+                let value: string = this.searchInput.nativeElement.value;
 
-                this.change.next({
+                value = this.isTrim ? value.replace(/ {1,}/g," ").trim() : value;
+
+                this.searchChange.next({
                     query: value
                 });
             });

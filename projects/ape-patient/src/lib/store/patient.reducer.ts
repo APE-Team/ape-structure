@@ -15,7 +15,7 @@ export interface PatientPartialState {
 
 export const patientAdapter: EntityAdapter<PatientModel> = createEntityAdapter<PatientModel>(
     {
-        selectId: (model: PatientModel) => model.uid,
+        selectId: (model: PatientModel) => model.id,
     }
 );
 

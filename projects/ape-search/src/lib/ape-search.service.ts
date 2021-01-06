@@ -20,7 +20,7 @@ export abstract class ApeSearchService extends SearchBaseService {
     public createIndex(
         entities: EntityModel[],
         strict: boolean = false,
-        reference: string = 'uid'
+        reference: string = 'id'
     ): void {
         this.entities = entities;
         this.strict = strict;
@@ -34,7 +34,9 @@ export abstract class ApeSearchService extends SearchBaseService {
                 this.field(searchType.property);
             });
 
-            entities.forEach((entity) => this.add(entity));
+            entities.forEach((entity) => {
+                this.add(entity);
+            });
 
             this.ref(reference);
         });
@@ -46,13 +48,17 @@ export abstract class ApeSearchService extends SearchBaseService {
             this.WILDCARD
         );
 
+        const query = queryElements.join(this.QUERY_SEPARATOR);
+
         return {
-            result: (this.index as lunr.Index).search(search.query),
+            result: (this.index as lunr.Index).search(
+                query
+            ),
         };
     }
 
     protected addWildcard(query: string, wildcard: string): string {
-        return wildcard === '' ? wildcard : `${wildcard}${query}${wildcard}`;
+        return query === '' ? wildcard : `${wildcard}${query}${wildcard}`;
     }
 
     protected enhanceQueryElements(
@@ -60,7 +66,7 @@ export abstract class ApeSearchService extends SearchBaseService {
         wildcard: string
     ): string[] {
         if (!this.strict) {
-            queryElements.map((element) =>
+            queryElements = queryElements.map((element) =>
                 element[0] !== '+' && element[0] !== '-'
                     ? this.addWildcard(element, wildcard)
                     : element

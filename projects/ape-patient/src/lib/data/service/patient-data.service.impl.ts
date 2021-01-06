@@ -15,7 +15,7 @@ export class PatientDataServiceImpl extends PatientDataService {
         this.initPatients();
 
         this.patients.forEach((patient) =>
-            this.patientMap.set(patient.uid, patient)
+            this.patientMap.set(patient.id, patient)
         );
     }
 
@@ -27,14 +27,14 @@ export class PatientDataServiceImpl extends PatientDataService {
         return of(this.patients);
     }
 
-    public load$(uid: string): Observable<EntityModel> {
-        return this.patientMap.get(uid);
+    public load$(id: string): Observable<EntityModel> {
+        return this.patientMap.get(id);
     }
 
     private initPatients(): void {
         this.patients = [
         {
-          "uid": "5ff593f5d7f37dc41a9c13e9",
+          "id": "5ff593f5d7f37dc41a9c13e9",
           "index": 0,
           "birthDate": "Sat Jul 17 2004 19:19:11 GMT+0000",
           "firstName": "Livingston",
@@ -58,7 +58,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5e6d139ebab9e1e9f",
+          "id": "5ff593f5e6d139ebab9e1e9f",
           "index": 1,
           "birthDate": "Mon Aug 21 1989 12:30:51 GMT+0000",
           "firstName": "Christian",
@@ -82,7 +82,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5a92a9573761975dc",
+          "id": "5ff593f5a92a9573761975dc",
           "index": 2,
           "birthDate": "Mon Aug 19 2013 02:38:45 GMT+0000",
           "firstName": "Casey",
@@ -106,7 +106,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f50b967f5833c53be8",
+          "id": "5ff593f50b967f5833c53be8",
           "index": 3,
           "birthDate": "Thu Jun 16 1994 13:25:54 GMT+0000",
           "firstName": "Franco",
@@ -130,7 +130,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f51c533c2bd401cfde",
+          "id": "5ff593f51c533c2bd401cfde",
           "index": 4,
           "birthDate": "Mon Mar 23 1987 06:35:19 GMT+0000",
           "firstName": "Boone",
@@ -154,7 +154,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f56e2d88ff7ef9658e",
+          "id": "5ff593f56e2d88ff7ef9658e",
           "index": 5,
           "birthDate": "Mon Dec 20 1993 00:15:54 GMT+0000",
           "firstName": "Liliana",
@@ -178,7 +178,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f522017a2fb78df7c4",
+          "id": "5ff593f522017a2fb78df7c4",
           "index": 6,
           "birthDate": "Sun Jan 15 1995 09:39:06 GMT+0000",
           "firstName": "Richard",
@@ -202,7 +202,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f50d1a69c1966757dd",
+          "id": "5ff593f50d1a69c1966757dd",
           "index": 7,
           "birthDate": "Thu Apr 26 2007 23:33:05 GMT+0000",
           "firstName": "Pace",
@@ -226,7 +226,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5891d998905da36b3",
+          "id": "5ff593f5891d998905da36b3",
           "index": 8,
           "birthDate": "Sun Aug 22 1976 06:21:49 GMT+0000",
           "firstName": "Edwards",
@@ -250,7 +250,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5be01a808bfa89520",
+          "id": "5ff593f5be01a808bfa89520",
           "index": 9,
           "birthDate": "Mon Feb 16 1970 06:27:21 GMT+0000",
           "firstName": "Irene",
@@ -274,7 +274,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5fa9e0100c905371d",
+          "id": "5ff593f5fa9e0100c905371d",
           "index": 10,
           "birthDate": "Mon Nov 21 2011 18:34:03 GMT+0000",
           "firstName": "Willa",
@@ -298,7 +298,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5cd7c75e0ddc63f52",
+          "id": "5ff593f5cd7c75e0ddc63f52",
           "index": 11,
           "birthDate": "Fri Aug 16 1974 01:50:52 GMT+0000",
           "firstName": "Abby",
@@ -322,7 +322,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5c58dcb0c45e85efa",
+          "id": "5ff593f5c58dcb0c45e85efa",
           "index": 12,
           "birthDate": "Sat Jan 17 1970 23:12:33 GMT+0000",
           "firstName": "Rocha",
@@ -346,7 +346,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5c88cd1176888861f",
+          "id": "5ff593f5c88cd1176888861f",
           "index": 13,
           "birthDate": "Sat Oct 22 2011 20:59:42 GMT+0000",
           "firstName": "Lee",
@@ -370,7 +370,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5ab7760d1b1cbed70",
+          "id": "5ff593f5ab7760d1b1cbed70",
           "index": 14,
           "birthDate": "Sun Jul 15 2012 05:16:01 GMT+0000",
           "firstName": "Bartlett",
@@ -394,7 +394,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5738d5bc82386d336",
+          "id": "5ff593f5738d5bc82386d336",
           "index": 15,
           "birthDate": "Sat Aug 10 1974 12:28:22 GMT+0000",
           "firstName": "Gray",
@@ -418,7 +418,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5aff1bdb483533a99",
+          "id": "5ff593f5aff1bdb483533a99",
           "index": 16,
           "birthDate": "Fri Oct 11 1996 04:58:01 GMT+0000",
           "firstName": "Colette",
@@ -442,7 +442,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f51e3b446b78d4903b",
+          "id": "5ff593f51e3b446b78d4903b",
           "index": 17,
           "birthDate": "Tue Sep 07 1999 18:00:09 GMT+0000",
           "firstName": "Mavis",
@@ -466,7 +466,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f57ef2bdd8476e8076",
+          "id": "5ff593f57ef2bdd8476e8076",
           "index": 18,
           "birthDate": "Thu Jan 04 1990 02:28:48 GMT+0000",
           "firstName": "Pacheco",
@@ -490,7 +490,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f50491d9216e78949b",
+          "id": "5ff593f50491d9216e78949b",
           "index": 19,
           "birthDate": "Tue Jun 15 1993 23:45:45 GMT+0000",
           "firstName": "Wright",
@@ -514,7 +514,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f52fc88c9825d30efc",
+          "id": "5ff593f52fc88c9825d30efc",
           "index": 20,
           "birthDate": "Sat Jan 27 1996 05:51:10 GMT+0000",
           "firstName": "Sawyer",
@@ -538,7 +538,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5b41c86a7576ab730",
+          "id": "5ff593f5b41c86a7576ab730",
           "index": 21,
           "birthDate": "Sat Apr 19 2008 10:25:29 GMT+0000",
           "firstName": "Herman",
@@ -562,7 +562,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5e8e93fb1eba044a4",
+          "id": "5ff593f5e8e93fb1eba044a4",
           "index": 22,
           "birthDate": "Fri Aug 19 2011 15:20:45 GMT+0000",
           "firstName": "Morgan",
@@ -586,7 +586,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f575c97d8cb61788fa",
+          "id": "5ff593f575c97d8cb61788fa",
           "index": 23,
           "birthDate": "Wed Nov 09 1988 03:20:41 GMT+0000",
           "firstName": "Florence",
@@ -610,7 +610,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f55dfb918529031f28",
+          "id": "5ff593f55dfb918529031f28",
           "index": 24,
           "birthDate": "Thu Dec 15 1994 17:57:35 GMT+0000",
           "firstName": "Callie",
@@ -634,7 +634,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5d8a4642fc7d17a77",
+          "id": "5ff593f5d8a4642fc7d17a77",
           "index": 25,
           "birthDate": "Sun Apr 23 1972 17:38:48 GMT+0000",
           "firstName": "Sykes",
@@ -658,7 +658,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f544bcab40c311951f",
+          "id": "5ff593f544bcab40c311951f",
           "index": 26,
           "birthDate": "Thu Nov 12 1998 17:02:38 GMT+0000",
           "firstName": "Mercedes",
@@ -682,7 +682,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f53151499f35c2893f",
+          "id": "5ff593f53151499f35c2893f",
           "index": 27,
           "birthDate": "Thu May 14 1987 03:10:33 GMT+0000",
           "firstName": "Bowen",
@@ -706,7 +706,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f59984ec8c318f5073",
+          "id": "5ff593f59984ec8c318f5073",
           "index": 28,
           "birthDate": "Thu Apr 07 1988 00:26:30 GMT+0000",
           "firstName": "Marietta",
@@ -730,7 +730,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f54a6f471270275564",
+          "id": "5ff593f54a6f471270275564",
           "index": 29,
           "birthDate": "Wed Jul 08 2015 07:12:13 GMT+0000",
           "firstName": "Hurley",
@@ -754,7 +754,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f55343c7840161ab50",
+          "id": "5ff593f55343c7840161ab50",
           "index": 30,
           "birthDate": "Sun Mar 24 2002 04:50:38 GMT+0000",
           "firstName": "Barber",
@@ -778,7 +778,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f520621033996d7045",
+          "id": "5ff593f520621033996d7045",
           "index": 31,
           "birthDate": "Wed Jul 24 2002 02:18:33 GMT+0000",
           "firstName": "Cline",
@@ -802,7 +802,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5e64c6d121c252781",
+          "id": "5ff593f5e64c6d121c252781",
           "index": 32,
           "birthDate": "Tue Mar 18 1980 06:51:42 GMT+0000",
           "firstName": "Kitty",
@@ -826,7 +826,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f533a6ba68fe735275",
+          "id": "5ff593f533a6ba68fe735275",
           "index": 33,
           "birthDate": "Wed Mar 13 1996 16:04:22 GMT+0000",
           "firstName": "Holder",
@@ -850,7 +850,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5daa60d5357b035d2",
+          "id": "5ff593f5daa60d5357b035d2",
           "index": 34,
           "birthDate": "Wed Jul 15 2015 17:24:11 GMT+0000",
           "firstName": "Nichole",
@@ -874,7 +874,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5fe72b902df532cf7",
+          "id": "5ff593f5fe72b902df532cf7",
           "index": 35,
           "birthDate": "Fri Apr 25 1980 07:15:02 GMT+0000",
           "firstName": "Lynn",
@@ -898,7 +898,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5cf08b88d17569e77",
+          "id": "5ff593f5cf08b88d17569e77",
           "index": 36,
           "birthDate": "Fri Oct 22 1993 05:27:45 GMT+0000",
           "firstName": "Mcclain",
@@ -922,7 +922,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5d19261e0fbc3ac36",
+          "id": "5ff593f5d19261e0fbc3ac36",
           "index": 37,
           "birthDate": "Sat May 07 2011 02:19:28 GMT+0000",
           "firstName": "Bruce",
@@ -946,7 +946,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f528e9d623b1594b32",
+          "id": "5ff593f528e9d623b1594b32",
           "index": 38,
           "birthDate": "Wed Jun 27 1990 05:32:57 GMT+0000",
           "firstName": "Buck",
@@ -970,7 +970,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f53a847fec62dc2c74",
+          "id": "5ff593f53a847fec62dc2c74",
           "index": 39,
           "birthDate": "Sun May 30 1999 04:29:06 GMT+0000",
           "firstName": "Gail",
@@ -994,7 +994,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5c3566e1116782864",
+          "id": "5ff593f5c3566e1116782864",
           "index": 40,
           "birthDate": "Fri Mar 29 1974 16:20:54 GMT+0000",
           "firstName": "Freida",
@@ -1018,7 +1018,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f54f2f187888c18236",
+          "id": "5ff593f54f2f187888c18236",
           "index": 41,
           "birthDate": "Mon Jan 22 2007 08:20:52 GMT+0000",
           "firstName": "Schwartz",
@@ -1042,7 +1042,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f577901e7849dad92c",
+          "id": "5ff593f577901e7849dad92c",
           "index": 42,
           "birthDate": "Wed Aug 19 1992 23:23:06 GMT+0000",
           "firstName": "Sheena",
@@ -1066,7 +1066,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f55329657eabab785b",
+          "id": "5ff593f55329657eabab785b",
           "index": 43,
           "birthDate": "Mon Feb 17 2020 02:08:33 GMT+0000",
           "firstName": "Esperanza",
@@ -1090,7 +1090,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5cf2b465ca35a2721",
+          "id": "5ff593f5cf2b465ca35a2721",
           "index": 44,
           "birthDate": "Fri Dec 24 2010 10:58:19 GMT+0000",
           "firstName": "Celia",
@@ -1114,7 +1114,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f575308f0f9bb5f228",
+          "id": "5ff593f575308f0f9bb5f228",
           "index": 45,
           "birthDate": "Mon Oct 27 1975 01:28:12 GMT+0000",
           "firstName": "Ruth",
@@ -1138,7 +1138,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5bf57dab0bde71fc8",
+          "id": "5ff593f5bf57dab0bde71fc8",
           "index": 46,
           "birthDate": "Thu Mar 28 1991 08:18:00 GMT+0000",
           "firstName": "Sosa",
@@ -1162,7 +1162,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5d08ef56f076894e8",
+          "id": "5ff593f5d08ef56f076894e8",
           "index": 47,
           "birthDate": "Tue Mar 26 2002 09:44:01 GMT+0000",
           "firstName": "Beth",
@@ -1186,7 +1186,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f57b8ee4d76884567e",
+          "id": "5ff593f57b8ee4d76884567e",
           "index": 48,
           "birthDate": "Sat Feb 14 2004 04:08:36 GMT+0000",
           "firstName": "Nadia",
@@ -1210,7 +1210,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5a91c858f52d2f6fb",
+          "id": "5ff593f5a91c858f52d2f6fb",
           "index": 49,
           "birthDate": "Fri Dec 02 1977 04:10:54 GMT+0000",
           "firstName": "Alma",
@@ -1234,7 +1234,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f54530efb5b99b78c6",
+          "id": "5ff593f54530efb5b99b78c6",
           "index": 50,
           "birthDate": "Sun Jan 04 1976 17:57:28 GMT+0000",
           "firstName": "Casandra",
@@ -1258,7 +1258,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5232a27767dbb8d00",
+          "id": "5ff593f5232a27767dbb8d00",
           "index": 51,
           "birthDate": "Sat Oct 17 2009 20:17:15 GMT+0000",
           "firstName": "Mable",
@@ -1282,7 +1282,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5eaab25d6b2843ccd",
+          "id": "5ff593f5eaab25d6b2843ccd",
           "index": 52,
           "birthDate": "Mon Apr 03 1972 19:33:31 GMT+0000",
           "firstName": "Powell",
@@ -1306,7 +1306,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5b36768344592ca1a",
+          "id": "5ff593f5b36768344592ca1a",
           "index": 53,
           "birthDate": "Thu Apr 14 2016 01:05:21 GMT+0000",
           "firstName": "Cherry",
@@ -1330,7 +1330,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f59c6a73f95fdd4504",
+          "id": "5ff593f59c6a73f95fdd4504",
           "index": 54,
           "birthDate": "Wed Jan 01 2003 11:14:56 GMT+0000",
           "firstName": "Erika",
@@ -1354,7 +1354,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5166f6c368e612d73",
+          "id": "5ff593f5166f6c368e612d73",
           "index": 55,
           "birthDate": "Fri Jan 16 1998 04:54:08 GMT+0000",
           "firstName": "Hayes",
@@ -1378,7 +1378,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f50e7449a2ecd0e9ff",
+          "id": "5ff593f50e7449a2ecd0e9ff",
           "index": 56,
           "birthDate": "Thu Jul 10 1986 08:40:09 GMT+0000",
           "firstName": "Lara",
@@ -1402,7 +1402,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f578192dcd6ade98a3",
+          "id": "5ff593f578192dcd6ade98a3",
           "index": 57,
           "birthDate": "Fri May 16 2008 12:27:39 GMT+0000",
           "firstName": "Warner",
@@ -1426,7 +1426,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5898995cffa8a2bf4",
+          "id": "5ff593f5898995cffa8a2bf4",
           "index": 58,
           "birthDate": "Thu Jun 08 2006 04:42:39 GMT+0000",
           "firstName": "Kate",
@@ -1450,7 +1450,7 @@ export class PatientDataServiceImpl extends PatientDataService {
           ]
         },
         {
-          "uid": "5ff593f5f45c5ceec771c48a",
+          "id": "5ff593f5f45c5ceec771c48a",
           "index": 59,
           "birthDate": "Mon Jun 26 2000 15:33:01 GMT+0000",
           "firstName": "Queen",

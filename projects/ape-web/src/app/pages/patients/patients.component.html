@@ -1,1 +1,4 @@
-<lib-patient-list [patients]="patients$ | async"></lib-patient-list>
+<div>
+    <lib-ape-search (searchChange)="searchChangeHandler($event)"></lib-ape-search>
+</div>
+<lib-patient-list [patients]="patients$$ | async"></lib-patient-list>
