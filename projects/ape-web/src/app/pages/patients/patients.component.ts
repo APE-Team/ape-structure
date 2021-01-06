@@ -10,7 +10,7 @@ import {
     SearchModel,
 } from '@ape-api';
 
-import { PatientSearchService } from '../../service/patient-search.service';
+import { PatientSearchService } from './patient-search.service';
 
 @Component({
     selector: 'app-patients',
