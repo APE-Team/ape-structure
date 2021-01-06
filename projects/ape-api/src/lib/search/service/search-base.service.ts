@@ -2,13 +2,15 @@ import { EntityModel } from '../../entity';
 import { SearchModel, SearchResultModel, SearchTypeModel } from '../model';
 
 export abstract class SearchBaseService {
-    protected entities: EntityModel[];
-    protected languageSupport: any;
+    protected readonly QUERY_SEPARATOR = ' ';
+    protected readonly WILDCARD = '*';
 
-    public readonly QUERY_SEPARATOR = ' ';
+    protected entities: EntityModel[];
+    protected strict: boolean;
 
     protected constructor() {
         this.entities = [];
+        this.strict = false;
     }
 
     public abstract createIndex(
@@ -16,15 +18,15 @@ export abstract class SearchBaseService {
         strict: boolean,
         reference: string
     ): void;
-    public abstract enhanceQueryElements(
-        queryElements: string[],
-        strict: boolean,
-        wildcard: string
-    ): string[];
     public abstract getDefaultValue(): SearchModel;
     public abstract getSearchTypes(): SearchTypeModel[];
     public abstract search(
-        query: string,
+        search: SearchModel,
         isEnhanced: boolean
     ): SearchResultModel;
+
+    protected abstract enhanceQueryElements(
+        queryElements: string[],
+        wildcard: string
+    ): string[];
 }

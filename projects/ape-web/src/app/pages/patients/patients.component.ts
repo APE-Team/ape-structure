@@ -14,7 +14,7 @@ import { filter, map, switchMap } from 'rxjs/operators';
     styleUrls: ['./patients.component.scss'],
 })
 export class PatientsComponent implements OnInit {
-    public patients$: Observable<PatientModel[]> | undefined;
+    public patients$: Observable<PatientModel[]>;
 
     public constructor(
         private authenticationStateService: AuthenticationStateService,
