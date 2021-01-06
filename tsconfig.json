@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -29,6 +29,9 @@
       ],
       "@ape-patient": [
         "projects/ape-patient/src/public-api.ts"
+      ],
+      "@ape-search": [
+        "projects/ape-search/src/public-api.ts"
       ]
     }
   },

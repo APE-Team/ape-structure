@@ -1,3 +1,3 @@
 export interface EntityModel {
-    uid: string;
+    id: string;
 }

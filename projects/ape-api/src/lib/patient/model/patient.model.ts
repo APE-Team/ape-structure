@@ -4,15 +4,15 @@ export interface PatientModel extends EntityModel {
     abxScore: number;
     address: string;
     admitDate: string;
-    age: number;
     aspNotifications: string;
     bed: string;
+    birthDate: string;
     currentAntibiotics: string;
     daysOnAntibiotics: number;
     email: string;
-    guid: string;
+    firstName: string;
     index: number;
-    name: any;
+    lastName: string;
     nextReview: string;
     phone: string;
     room: number;

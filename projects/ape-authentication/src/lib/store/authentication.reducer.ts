@@ -14,7 +14,7 @@ export interface AuthenticationPartialState {
 }
 
 const defaultUser: UserModel = {
-    uid: '0',
+    id: '0',
     displayName: 'GUEST',
     firstName: '',
     lastName: '',

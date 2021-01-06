@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     public isCollapsed = false;
 
     private user: UserModel = {
-        uid: '10101010',
+        id: '10101010',
         displayName: 'JM',
         firstName: 'James',
         lastName: 'Montgomery',

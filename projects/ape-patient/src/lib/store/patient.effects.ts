@@ -29,7 +29,7 @@ export class PatientEffects {
         this.actions$.pipe(
             ofType(patientActions.loadPatient),
             switchMap((action) =>
-                this.patientDataService.load$(action.uid).pipe(
+                this.patientDataService.load$(action.id).pipe(
                     map((patient) => {
                         return patientActions.loadPatientSuccess({
                             patient: patient as PatientModel,
